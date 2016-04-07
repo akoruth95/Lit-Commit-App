@@ -108,7 +108,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView9"
-                    android:text="If two users give each other a &quot;Ignore&quot; rating, what would happen?"
+                    android:text="If two users give each other a &quot;Ignore&quot; rating, what would blah happen?"
                     android:textStyle="bold" />
 
                 <TextView

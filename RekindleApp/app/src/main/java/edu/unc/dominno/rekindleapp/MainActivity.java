@@ -1,43 +1,42 @@
 package edu.unc.dominno.rekindleapp;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.app.TabActivity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.Bundle;
+import android.widget.TabHost;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends TabActivity {
+    TabHost tabHost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+        tabHost = (TabHost)findViewById(android.R.id.tabhost);
+        //tabHost = getTabHost();
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        TabHost.TabSpec tab1 = tabHost.newTabSpec("First Tab");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
+        TabHost.TabSpec tab4 = tabHost.newTabSpec("Fourth Tab");
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        tab1.setIndicator("Home");
+        tab1.setContent(new Intent(this, Ratings.class));
 
-        return super.onOptionsItemSelected(item);
+        tab2.setIndicator("My Ratings");
+        tab2.setContent(new Intent(this, ShowRatings.class));
+
+        tab3.setIndicator("", getResources().getDrawable(R.drawable.micon));
+        tab3.setContent(new Intent(this, Messages.class));
+
+        tab4.setIndicator("FAQ");
+        tab4.setContent(new Intent(this,FAQ.class));
+
+        tabHost.addTab(tab1);
+        tabHost.addTab(tab2);
+        tabHost.addTab(tab3);
+        tabHost.addTab(tab4);
     }
 }

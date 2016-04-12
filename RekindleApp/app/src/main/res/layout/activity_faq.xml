@@ -106,7 +106,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Simply, no. However, when two users submit a similar rating, the app will notify both users a certain message depending on the rating they make. Both user would know the rating that the other user made, but in this case both user gave each other a postive rating."
+                android:text="Simply, Yes. However, when two users submit a similar rating, the app will notify both users a certain message depending on the rating they make. Both user would know the rating that the other user made, but in this case both user gave each other a postive rating."
                 android:id="@+id/textView11" />
 
             <TextView

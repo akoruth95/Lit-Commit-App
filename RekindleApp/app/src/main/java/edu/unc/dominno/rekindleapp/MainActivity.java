@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         tabHost.addTab(tab3);
         tabHost.addTab(tab4); */
 
+        setContentView(R.layout.activity_main);
+
         //FB Login Integration
         callbackManager = CallbackManager.Factory.create();
         accessTokenTracker = new AccessTokenTracker() {

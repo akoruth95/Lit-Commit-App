@@ -9,21 +9,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Welcomez to Rekindle!"
+        android:text="Welcome to Rekindle!"
         android:id="@+id/textView15"
         android:layout_gravity="center_horizontal|top" />
 
     //FB UI
     <TextView
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="84dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/fbInfo"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:textSize="12sp"
+        android:id="@+id/fbConnected"
+        android:textSize="16sp"
+        android:text="First time opening the app"
         android:layout_gravity="center_horizontal|center"
-        />
+        android:layout_below="@+id/textView15"
+        android:layout_centerHorizontal="true" />
+
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/fb_login_button"

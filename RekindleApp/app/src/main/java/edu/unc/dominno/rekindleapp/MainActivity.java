@@ -15,6 +15,8 @@ import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import org.w3c.dom.Text;
+
 //implements FacebookCallback
 
 public class MainActivity extends AppCompatActivity {
@@ -33,16 +35,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //FB Login Integration
         callbackManager = CallbackManager.Factory.create();
-        /* accessTokenTracker = new AccessTokenTracker() {
+        //tracks whether user is already logged in to FB
+        accessTokenTracker = new AccessTokenTracker() {
             @Override
-            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-                //set the access token using currentAccessToken when it's loaded or set
-
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken newAccessToken) {
+                updateWithToken(newAccessToken);
             }
             //If the access token is available already assign it
 
-        }; */
-        fbLoginInfo = (TextView) findViewById(R.id.fbInfo);
+        };
+        fbLoginInfo = (TextView) findViewById(R.id.fbConnected);
         loginButton = (LoginButton) findViewById(R.id.fb_login_button);
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -69,6 +71,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private void updateWithToken(AccessToken newAccessToken) {
+        TextView isFb = (TextView) findViewById(R.id.fbConnected);
+        if (isLoggedIn()) {
+            isFb.setText("I'm connected");
+        } else {
+            isFb.setText("NOT connected");
+        }
+    }
+
+    public boolean isLoggedIn() {
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        return accessToken != null;
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

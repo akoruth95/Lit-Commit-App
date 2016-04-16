@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@android:id/tabhost"
-    tools:context="edu.unc.dominno.rekindleapp.MainActivity">
+    tools:context="edu.unc.dominno.rekindleapp.Main2Activity">
 
     <RelativeLayout
         android:layout_width="match_parent"

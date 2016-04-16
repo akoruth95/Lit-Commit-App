@@ -14,8 +14,6 @@ public class Main2Activity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        setContentView(R.layout.activity_main);
-
         tabHost = (TabHost)findViewById(android.R.id.tabhost);
         //tabHost = getTabHost();
 

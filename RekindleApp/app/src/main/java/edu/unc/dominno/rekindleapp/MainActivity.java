@@ -70,6 +70,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        if (isLoggedIn()) {
+            // Send intent to Main2Activity
+            Intent x = new Intent(this, Main2Activity.class);
+            startActivity(x);
+        }
+
     }
 
     private void updateWithToken(AccessToken newAccessToken) {
@@ -79,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Send intent to Main2Activity
             Intent x = new Intent(this, Main2Activity.class);
-            startActivityForResult(x, 0);
+            startActivity(x);
         } else {
             isFb.setText("NOT connected");
         }

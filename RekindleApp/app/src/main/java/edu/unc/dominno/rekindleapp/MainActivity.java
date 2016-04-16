@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Send intent to Main2Activity
             Intent x = new Intent(this, Main2Activity.class);
-            startActivity(x);
+            startActivityForResult(x, 0);
         } else {
             isFb.setText("NOT connected");
         }

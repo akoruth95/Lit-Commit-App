@@ -30,9 +30,7 @@ public class MainActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         // Initialize the SDK before executing any other operations,
         // especially, if you're using Facebook UI elements.
-
         setContentView(R.layout.activity_main);
-
         //FB Login Integration
         callbackManager = CallbackManager.Factory.create();
         /* accessTokenTracker = new AccessTokenTracker() {

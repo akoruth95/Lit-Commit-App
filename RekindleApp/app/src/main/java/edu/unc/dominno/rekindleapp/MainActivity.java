@@ -76,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         TextView isFb = (TextView) findViewById(R.id.fbConnected);
         if (isLoggedIn()) {
             isFb.setText("I'm connected");
+
+            // Send intent to Main2Activity
+            Intent x = new Intent(this, Main2Activity.class);
+            startActivity(x);
         } else {
             isFb.setText("NOT connected");
         }

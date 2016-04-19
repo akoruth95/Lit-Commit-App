@@ -4,6 +4,8 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.widget.TabHost;
 
 public class Main2Activity extends TabActivity {
@@ -39,4 +41,20 @@ public class Main2Activity extends TabActivity {
         tabHost.addTab(tab3);
         tabHost.addTab(tab4);
     }
+
+    /*@Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            Log.v("REKINDLE", "onKeyDown Called");
+            onBackPressed();
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Log.v("REKINDLE", "onBackPressed Called");
+    }*/
 }

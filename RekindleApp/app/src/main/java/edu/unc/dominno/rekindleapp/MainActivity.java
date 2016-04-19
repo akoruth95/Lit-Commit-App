@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
             // Send intent to Main2Activity
             Intent x = new Intent(this, Main2Activity.class);
             startActivity(x);
+            finish();
         }
 
     }
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
             // Send intent to Main2Activity
             Intent x = new Intent(this, Main2Activity.class);
             startActivity(x);
+            finish();
         } else {
             isFb.setText("NOT connected");
         }

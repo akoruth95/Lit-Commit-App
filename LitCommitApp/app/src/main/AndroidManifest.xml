@@ -37,6 +37,12 @@
         <activity android:name=".CalendarTab" />
         <activity android:name=".TimerTab" />
         <activity android:name=".TodoTab"></activity>
+        
+        <provider
+            android:authorities="edu.unc.dominno.litcommitapp.todocp"
+            android:name=".TodoCP"
+            android:exported="false"></provider>
+
     </application>
 
 </manifest>

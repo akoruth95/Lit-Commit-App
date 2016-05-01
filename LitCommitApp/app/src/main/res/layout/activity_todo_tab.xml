@@ -15,7 +15,8 @@
         android:id="@+id/android:list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@drawable/divider">
+        android:divider="#839cf4"
+        android:dividerHeight="2dp">
 
     </ListView>
 

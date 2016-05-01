@@ -90,12 +90,12 @@ public class TodoEditor extends AppCompatActivity {
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     public void swap(View view) {
-        if (view.getTag()== false) {
-            view.setTag(true);
+        if (view.getTag()== "false") {
+            view.setTag("true");
             view.setBackgroundResource(drawable.green_check);
             updateReadStatus("true");
         } else {
-            view.setTag(false);
+            view.setTag("false");
             view.setBackgroundResource(drawable.red_check);
             updateReadStatus("false");
         }

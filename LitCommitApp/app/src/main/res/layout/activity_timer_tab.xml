@@ -9,4 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.unc.dominno.litcommitapp.TimerTab">
 
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="Large Text"
+        android:id="@+id/textView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:textSize="50dp" />
 </RelativeLayout>

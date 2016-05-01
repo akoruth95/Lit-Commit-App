@@ -11,4 +11,5 @@
     <color name="ColorPrimaryDark">#E64A19</color>
     <color name="light_green">#14E069</color>
     <color name="light_red">#ED6755</color>
+    <color name="notepad">#FFFACD</color>
 </resources>

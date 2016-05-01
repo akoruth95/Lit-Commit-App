@@ -8,4 +8,5 @@
     <string name="title_activity_todo_editor">TodoEditor</string>
     <string name="TRUE">true</string>
     <string name="delete_all_checked">Delete all checked items</string>
+    <string name="delete_list">Delete list</string>
 </resources>

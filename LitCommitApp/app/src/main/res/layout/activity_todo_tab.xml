@@ -7,13 +7,15 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+                android:background="@color/notepad"
     tools:context="edu.unc.dominno.litcommitapp.TodoTab">
 
 
     <ListView
         android:id="@+id/android:list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:divider="@drawable/divider">
 
     </ListView>
 

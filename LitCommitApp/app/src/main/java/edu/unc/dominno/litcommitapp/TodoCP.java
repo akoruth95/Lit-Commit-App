@@ -15,13 +15,15 @@ public class TodoCP extends ContentProvider {
 
     private static final String AUTHORITY = "edu.unc.dominno.litcommitapp.todocp";
     private static final String BASE_PATH = "notes";
-    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH );
 
-    // Constant to identify the requested operation
     private static final int NOTES = 1;//id to return data
     private static final int NOTES_ID = 2;//id to return a single record
 
+    public static final Uri DB_URI = Uri.parse("content://" + AUTHORITY + "/" + BASE_PATH );
+
     private static final UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
+
+    public static final String CONTENT_ITEM_TYPE = "todo";
 
     static {
         uriMatcher.addURI(AUTHORITY, BASE_PATH, NOTES);
@@ -41,7 +43,11 @@ public class TodoCP extends ContentProvider {
     @Nullable
     @Override
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-        return db.query(DBOpener.TABLE_NOTES, DBOpener.ALL_COLUMNS, selection, null, null, null, DBOpener.NOTE_CREATED + " DESC");
+        if (uriMatcher.match(uri)==NOTES_ID) {
+            selection = DBOpener.TODO_ID + "=" + uri.getLastPathSegment();
+        }
+
+        return db.query(DBOpener.TABLE_NOTES, DBOpener.ALL_COLUMNS, selection, null, null, null, DBOpener.TODO_CREATED + " DESC");
     }
 
     @Nullable

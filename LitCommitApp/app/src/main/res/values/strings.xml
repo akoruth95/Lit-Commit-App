@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Lit Commit</string>
     <string name="facebook_app_id">1712265072392198</string>
+    <string name="create_sample_data">Create Sample Data</string>
+    <string name="delete_all_notes">Delete all notes</string>
+    <string name="all_deleted">all notes have been deleted</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="title_activity_todo_editor">TodoEditor</string>
+    <string name="TRUE">true</string>
+    <string name="delete_all_checked">Delete all checked items</string>
 </resources>

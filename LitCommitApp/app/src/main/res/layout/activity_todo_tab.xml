@@ -16,4 +16,34 @@
         android:layout_height="match_parent">
 
     </ListView>
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Add Note"-->
+        <!--android:id="@+id/button"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:onClick="addNotePressed"/>-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/frameLayout">
+
+        <ImageButton
+            android:layout_margin="15dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/pencil"
+            android:background="@drawable/oval"
+            android:id="@+id/imageButton"
+            android:layout_gravity="right|bottom" />
+
+
+    </FrameLayout>
 </RelativeLayout>

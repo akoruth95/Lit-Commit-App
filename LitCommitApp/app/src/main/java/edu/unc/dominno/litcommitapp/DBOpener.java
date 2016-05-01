@@ -15,18 +15,20 @@ public class DBOpener extends SQLiteOpenHelper{
 
     //Constants for identifying table and columns
     public static final String TABLE_NOTES = "notes";
-    public static final String NOTE_ID = "_id";
-    public static final String NOTE_TEXT = "noteText";
-    public static final String NOTE_CREATED = "noteCreated";
+    public static final String TODO_ID = "_id";
+    public static final String TODO_TEXT = "noteText";
+    public static final String TODO_CREATED = "noteCreated";
+    public static final String NOTE_READ = "noteRead";
 
-    public static final String[] ALL_COLUMNS = {NOTE_ID, NOTE_TEXT, NOTE_CREATED};
+
+    public static final String[] ALL_COLUMNS = {TODO_ID, TODO_TEXT, TODO_CREATED, NOTE_READ};
 
     //SQL to create table
     private static final String TABLE_CREATE =
             "CREATE TABLE " + TABLE_NOTES + " (" +
-                    NOTE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    NOTE_TEXT + " TEXT, " +
-                    NOTE_CREATED + " TEXT default CURRENT_TIMESTAMP" +
+                    TODO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    TODO_TEXT + " TEXT, " +
+                    TODO_CREATED + " TEXT default CURRENT_TIMESTAMP," + NOTE_READ + " TEXT" +
                     ")";
 
 

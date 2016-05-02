@@ -22,6 +22,7 @@ import android.widget.Toast;
 public class TodoTab extends ActionBarActivity implements android.app.LoaderManager.LoaderCallbacks<Cursor> {
     private CursorAdapter adapter;
     ImageButton FAB;
+    private String due_date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,9 @@ public class TodoTab extends ActionBarActivity implements android.app.LoaderMana
         FAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addNotePressed();
+                // Popup window
+                Intent i = new Intent(TodoTab.this, DateChooser.class);
+                startActivityForResult(i, 2);
             }
         });
 
@@ -49,6 +52,8 @@ public class TodoTab extends ActionBarActivity implements android.app.LoaderMana
             }});
 
         getLoaderManager().initLoader(1, null, this);
+
+        due_date = "";
     }
 
     @Override
@@ -144,6 +149,7 @@ public class TodoTab extends ActionBarActivity implements android.app.LoaderMana
 
     public void addNotePressed() {
         Intent add = new Intent(this, TodoEditor.class);
+        add.putExtra("due date", due_date);
         startActivityForResult(add, 0);
     }
 
@@ -151,6 +157,12 @@ public class TodoTab extends ActionBarActivity implements android.app.LoaderMana
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 0 && resultCode == RESULT_OK) {
             restartLoader();
+        } else if (requestCode == 2 && resultCode == RESULT_OK) {
+            Uri u = data.getData();
+            //Log.v("DOMINNO",u.toString());
+            due_date = u.toString();
+            Log.v("DOMINNO", "onActivityResult: " + due_date);
+            addNotePressed();
         }
     }
 }

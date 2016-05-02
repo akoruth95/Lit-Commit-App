@@ -19,16 +19,18 @@ public class DBOpener extends SQLiteOpenHelper{
     public static final String TODO_TEXT = "noteText";
     public static final String TODO_CREATED = "noteCreated";
     public static final String NOTE_READ = "noteRead";
+    public static final String DUE_DATE = "dueDate";
 
 
-    public static final String[] ALL_COLUMNS = {TODO_ID, TODO_TEXT, TODO_CREATED, NOTE_READ};
+    public static final String[] ALL_COLUMNS = {TODO_ID, TODO_TEXT, TODO_CREATED, NOTE_READ, DUE_DATE};
 
     //SQL to create table
     private static final String TABLE_CREATE =
             "CREATE TABLE " + TABLE_NOTES + " (" +
                     TODO_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     TODO_TEXT + " TEXT, " +
-                    TODO_CREATED + " TEXT default CURRENT_TIMESTAMP," + NOTE_READ + " TEXT" +
+                    TODO_CREATED + " TEXT default CURRENT_TIMESTAMP," + NOTE_READ + " TEXT, " +
+                    DUE_DATE + " TEXT" +
                     ")";
 
 

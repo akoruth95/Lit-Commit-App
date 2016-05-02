@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,6 +21,7 @@ public class TodoEditor extends AppCompatActivity {
     private EditText text;
     private String initial;
     private String where_clause;
+    private String dd;
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     @Override
@@ -33,6 +35,9 @@ public class TodoEditor extends AppCompatActivity {
         }
         text = (EditText) findViewById(id.editor);
         Intent intent = getIntent();
+
+        dd = getIntent().getExtras().getString("due date");
+        Log.v("DOMINNO", "The data is..." + dd);
 
         Uri uri = intent.getParcelableExtra(TodoCP.CONTENT_ITEM_TYPE);
         if (uri == null) {
@@ -62,7 +67,7 @@ public class TodoEditor extends AppCompatActivity {
             if (text.length() == 0) {
                 setResult(RESULT_CANCELED);
             } else {
-                insertNote(text, "false");
+                insertNote(text, "false", dd);
                 setResult(RESULT_OK);
             }
             finish();
@@ -107,10 +112,11 @@ public class TodoEditor extends AppCompatActivity {
         getContentResolver().update(TodoCP.DB_URI, values, where_clause, null);
     }
 
-    private void insertNote(String text, String read) {
+    private void insertNote(String text, String read, String due) {
         ContentValues values = new ContentValues();
         values.put(DBOpener.TODO_TEXT, text);
         values.put(DBOpener.NOTE_READ, read);
+        values.put(DBOpener.DUE_DATE, due);
          getContentResolver().insert(TodoCP.DB_URI, values);
         setResult(RESULT_OK);
     }

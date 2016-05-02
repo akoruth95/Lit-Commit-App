@@ -9,4 +9,6 @@
     <string name="TRUE">true</string>
     <string name="delete_all_checked">Delete all checked items</string>
     <string name="delete_list">Delete list</string>
+    <string name="longerBreak">"Take a Longer Break!"</string>
+    <string name="regularBreak">"Time until Longer Break...</string>
 </resources>

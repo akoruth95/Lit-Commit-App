@@ -39,13 +39,9 @@ public class CalendarTab extends AppCompatActivity {
     public void initializeCalendar() {
         calendar = (CalendarView)findViewById(R.id.calendarView);
 
-
-
         calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month, int dayofMonth) {
-                //showPop("Date: "+ month + "/" + dayofMonth + "/" + year);
-                showPop("" + month);
                 switch (month) {
                     case 0:
                         mm.setText("January");
@@ -109,9 +105,7 @@ public class CalendarTab extends AppCompatActivity {
                 }
 
                 date = yyyy.getText() + "-" + mnum + "-" + dnum;
-                Log.v("DOMINNO", date + " chosen");
-                //where_clause = DBOpener.DUE_DATE + "=" + date;
-                //Cursor cursor = getContentResolver().query(TodoCP.DB_URI, DBOpener.ALL_COLUMNS, where_clause, null, null);
+
                 Cursor cursor = getContentResolver().query(TodoCP.DB_URI, DBOpener.ALL_COLUMNS, null, null, null);
                 if (cursor == null) {
                     Log.v("DOMINNO", "cursor is null");
@@ -133,25 +127,15 @@ public class CalendarTab extends AppCompatActivity {
                         s = c2.getString(c2.getColumnIndex(DBOpener.TODO_TEXT));
                         Log.v("DOMINNO", s);
                         TextView t = new TextView(getApplicationContext());
-                        t.setText(s);
+                        t.setText("\u2022 "+s);
                         t.setTextColor(Color.BLACK);
+                        t.setTextSize(25);
                         l.addView(t);
                     }
-                    //Log.v("DOMINNO", "In while loop");
-                    //String s = (cursor.getString(cursor.getColumnIndex(DBOpener.TODO_TEXT)));
-
                     cursor.moveToNext();
                 }
 
             }
         });
-    }
-
-    public void showPop(String s) {
-        Context context = getApplicationContext();
-        int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, s, duration);
-        toast.show();
     }
 }

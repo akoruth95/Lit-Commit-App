@@ -38,7 +38,8 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:singleLine="false"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -46,7 +47,8 @@
             android:id="@+id/dayText"
             android:layout_below="@+id/imageView"
             android:layout_centerHorizontal="true"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,7 +57,8 @@
             android:layout_below="@+id/imageView"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -64,6 +67,7 @@
         android:layout_height="fill_parent"
         android:id="@+id/scrollView"
         android:layout_below="@+id/relativeLayout"
+        android:background="@color/notepad"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
 
@@ -76,7 +80,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TEST"
+                android:text="Press on a day to see the to-do items due that day"
                 android:id="@+id/textView"
                 android:textSize="30dp" />
 

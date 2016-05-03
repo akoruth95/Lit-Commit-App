@@ -7,6 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/floralwhite"
     tools:context="edu.unc.dominno.litcommitapp.TimerTab">
 
     <Button
@@ -14,18 +15,22 @@
         android:layout_height="wrap_content"
         android:text="25:00"
         android:id="@+id/studyTimer"
+        android:textColor="@color/white"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@drawable/green_button" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5:00"
         android:id="@+id/breakTimer"
+        android:textColor="@color/white"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/round_button_lightblue" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,17 +54,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
+        android:textColor="@color/white"
         android:id="@+id/start"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/studyTimer"
         android:layout_alignEnd="@+id/studyTimer"
-        android:onClick="start"/>
+        android:onClick="start"
+        android:background="@drawable/round_button_green" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reset"
+        android:textColor="@color/white"
         android:id="@+id/reset"
+        android:background="@drawable/round_button_orchid"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/breakTimer"
         android:layout_alignStart="@+id/breakTimer"
@@ -69,7 +78,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Pause"
+        android:textColor="@color/white"
         android:id="@+id/pause"
+        android:background="@drawable/round_button_red"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:onClick="pause" />

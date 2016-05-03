@@ -12,4 +12,12 @@
     <color name="light_green">#14E069</color>
     <color name="light_red">#ED6755</color>
     <color name="notepad">#FFFACD</color>
+    <color name="azure">#F0FFFF</color>
+    <color name="floralwhite">#FFFAF0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="lightBlue">#ADD8E6</color>
+    <color name="forestGreen">#228B22</color>
+    <color name="red">#CD5C5C</color>
+    <color name="orchid">#DA70D6</color>
+
 </resources>

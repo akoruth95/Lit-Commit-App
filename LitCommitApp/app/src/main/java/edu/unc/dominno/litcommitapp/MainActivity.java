@@ -3,6 +3,7 @@ package edu.unc.dominno.litcommitapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 // Add this to the header of your file:
 import com.facebook.AccessToken;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private CallbackManager callbackManager; //manages callbacks used in FB
     private AccessTokenTracker accessTokenTracker; //the current access token & profile
     private ProfileTracker profileTracker; //tracks current profile
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

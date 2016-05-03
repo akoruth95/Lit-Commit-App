@@ -1,10 +1,13 @@
 package edu.unc.dominno.litcommitapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 // Add this to the header of your file:
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -44,29 +47,30 @@ public class MainActivity extends AppCompatActivity {
             //If the access token is available already assign it
 
         };
-        fbLoginInfo = (TextView) findViewById(R.id.fbConnected);
+        //fbLoginInfo = (TextView) findViewById(R.id.fbConnected);
         loginButton = (LoginButton) findViewById(R.id.fb_login_button);
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                fbLoginInfo.setText(
+                /*fbLoginInfo.setText(
                         "User ID: "
                                 + loginResult.getAccessToken().getUserId()
                                 + "\n" +
                                 "Auth Token: "
                                 + loginResult.getAccessToken().getToken()
-                );
+                );*/
             }
 
             @Override
             public void onCancel() {
-                fbLoginInfo.setText("Login attempt canceled");
+                //fbLoginInfo.setText("Login attempt canceled");
+                showPop("Facebook Login Canceled!");
             }
 
             @Override
             public void onError(FacebookException error) {
-
-                fbLoginInfo.setText("Login attempt failed: " + error.getMessage());
+                //fbLoginInfo.setText("Login attempt failed: " + error.getMessage());
+                showPop("Facebook Login Failed!");
             }
         });
 
@@ -80,16 +84,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateWithToken(AccessToken newAccessToken) {
-        TextView isFb = (TextView) findViewById(R.id.fbConnected);
+        //TextView isFb = (TextView) findViewById(R.id.fbConnected);
         if (isLoggedIn()) {
-            isFb.setText("I'm connected");
+            //isFb.setText("I'm connected");
 
             // Send intent to Main2Activity
             Intent x = new Intent(this, Main2Activity.class);
             startActivity(x);
             finish();
         } else {
-            isFb.setText("NOT connected");
+            showPop("Facebook Login Failed!");
         }
     }
 
@@ -103,5 +107,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void goWithoutFB(View v) {
+        Intent x = new Intent(this, Main2Activity.class);
+        startActivity(x);
+        finish();
+    }
+
+    public void showPop(String s) {
+        Context context = getApplicationContext();
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, s, duration);
+        toast.show();
     }
 }

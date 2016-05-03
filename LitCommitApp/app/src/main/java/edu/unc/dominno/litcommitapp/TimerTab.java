@@ -132,7 +132,7 @@ public class TimerTab extends AppCompatActivity {
 
             } else {
                 //not Paused
-                pomodoroTimer = new CountDownTimer(5000, 1000) {
+                pomodoroTimer = new CountDownTimer(1500000, 1000) {
                     public void onTick(long millisUntilFinished) {
                         studyTimeUntilFinished = millisUntilFinished;
                         int secs = (int) (millisUntilFinished / 1000);
@@ -249,7 +249,7 @@ public class TimerTab extends AppCompatActivity {
                 if (breakTimer != null)
                     breakTimer = null;
                 //On Longer break
-                breakTimer = new CountDownTimer(100000, 1000) {
+                breakTimer = new CountDownTimer(600000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         //do something on every tick
@@ -293,7 +293,7 @@ public class TimerTab extends AppCompatActivity {
 
             } else {
                 //On regular (shorter) break
-                breakTimer = new CountDownTimer(5000, 1000) {
+                breakTimer = new CountDownTimer(300000, 1000) {
                     @Override
                     public void onTick(long millisUntilFinished) {
                         //do something on every tick

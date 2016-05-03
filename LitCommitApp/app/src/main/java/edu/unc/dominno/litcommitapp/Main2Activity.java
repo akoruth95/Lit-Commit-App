@@ -20,11 +20,17 @@ public class Main2Activity extends TabActivity {
         TabHost.TabSpec tab2 = tabHost.newTabSpec("Second Tab");
         TabHost.TabSpec tab3 = tabHost.newTabSpec("Third Tab");
 
-        tab1.setIndicator("Calendar");
+        /*tab1.setIndicator("Calendar");
         tab1.setContent(new Intent(this, CalendarTab.class));
 
         tab2.setIndicator("To-Do");
-        tab2.setContent(new Intent(this, TodoTab.class));
+        tab2.setContent(new Intent(this, TodoTab.class));*/
+
+        tab1.setIndicator("To-Do");
+        tab1.setContent(new Intent(this, TodoTab.class));
+
+        tab2.setIndicator("Calendar");
+        tab2.setContent(new Intent(this, CalendarTab.class));
 
         tab3.setIndicator("Timer");
         tab3.setContent(new Intent(this, TimerTab.class));

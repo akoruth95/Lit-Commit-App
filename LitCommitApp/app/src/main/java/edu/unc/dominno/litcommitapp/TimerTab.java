@@ -193,52 +193,7 @@ public class TimerTab extends AppCompatActivity {
             }
         }
         else {
-            if (isPaused) {
-                breakTimer = new CountDownTimer(breakTimeUntilFinished, 1000) {
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        //do something on every tick
-                        breakTimeUntilFinished = millisUntilFinished;
-                        int secs = (int) (millisUntilFinished / 1000);
-                        int mins = secs / 60;
-                        secs = secs % 60;
-                        breakBtn.setText("" + mins + ": " + String.format("%02d", secs));
 
-                    }
-
-                    @Override
-                    public void onFinish() {
-                        currModeTxt.setText("Back to Studying!");
-                        if (numPomodoros == 4)
-                            breakBtn.setText("10:00");
-                        else {
-                            breakBtn.setText("5:00");
-                        }
-                        //Disable Break timer
-                        breakBtn.setEnabled(false);
-                        //Disable pause button
-                        pauseBtn.setEnabled(false);
-                        try {
-                            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
-                            r.play();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        //Get instance of vibrator from current Context
-                        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                        //Vibrate 2 times for  700 milliseconds
-                        long[] pattern = {0, 700, 300, 700};
-                        v.vibrate(pattern, -1);
-                        startBtn.setText("Start Study");
-                        //User should now be studying
-                        studyTimerBtn.setEnabled(true);
-                        onBreak = false;
-                        //enable start button
-                        startBtn.setEnabled(true);
-                    }
-                }.start();
-            }
             //User should be on break
             if (numPomodoros == 4) {
                 numPomodoros = 0;

@@ -18,10 +18,11 @@
         android:textColor="@color/white"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:background="@drawable/green_button">
 
     </Button>
-        <!--android:background="@drawable/green_button" />-->
+
 
     <Button
         android:layout_width="wrap_content"
@@ -31,10 +32,11 @@
         android:textColor="@color/white"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/round_button_lightblue">
 
     </Button>
-        <!--android:background="@drawable/round_button_lightblue" />-->
+        <!-- />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -63,10 +65,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/studyTimer"
         android:layout_alignEnd="@+id/studyTimer"
-        android:onClick="start">
+        android:onClick="start"
+        android:background="@drawable/round_button_green">
 
     </Button>
-        <!--android:background="@drawable/round_button_green" />-->
+        <!--/>-->
 
     <Button
         android:layout_width="wrap_content"
@@ -77,10 +80,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/breakTimer"
         android:layout_alignStart="@+id/breakTimer"
-        android:onClick="reset">
+        android:onClick="reset"
+        android:background="@drawable/round_button_orchid">
 
     </Button>
-        <!--android:background="@drawable/round_button_orchid"/>-->
+        <!--/>-->
 
     <Button
         android:layout_width="wrap_content"
@@ -90,10 +94,11 @@
         android:id="@+id/pause"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="pause">
+        android:onClick="pause"
+        android:background="@drawable/round_button_red">
 
     </Button>
-        <!--android:background="@drawable/round_button_red"/>-->
+        <!--/>-->
 
     <TextView
         android:layout_width="wrap_content"
